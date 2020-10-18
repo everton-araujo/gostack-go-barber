@@ -17,7 +17,6 @@ describe('CreateAppointment', () => {
         expect(appointment.provider_id).toBe('123123123');
 
         expect(appointment).toHaveProperty('date');
-        // expect(appointment.date).toBe(Date.now());
     });
 
     it('should not be able to create two appointments on the same time', async () => {
