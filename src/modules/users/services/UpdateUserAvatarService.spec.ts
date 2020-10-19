@@ -36,7 +36,7 @@ describe('UpdateUserAvatar', () => {
             avatarFileName: 'avatar.jpg',
         });
 
-        expect(response).rejects.toBeInstanceOf(AppError);
+        await expect(response).rejects.toBeInstanceOf(AppError);
     });
 
     it('should delete old avatar on updating new one', async () => {
