@@ -4,9 +4,9 @@
 
 **RF**
 
-- Usuário pode recuperar sua senha informando seu e-mail
-- Usuário recebe e-mail com as instruções de recuperação de senha;
-- Usuário consegue redefinir sua senha;
+- Usuário deve conseguir recuperar sua senha informando seu e-mail;
+- Usuário deve receber e-mail com as instruções de recuperação de senha;
+- Usuário deve conseguir redefinir sua senha;
 
 **RNF**
 
@@ -23,7 +23,7 @@
 
 **RF**
 
-- Usuário pode atualizar nome, e-mail e senha;
+- Usuário deve conseguir atualizar nome, e-mail e senha;
 
 **RN**
 
@@ -35,8 +35,8 @@
 
 **RF**
 
-- Prestador pode listar seus agendamentos em data específica;
-- Prestador deve receber notificação sempre que houver um novo agendamento;
+- Prestador deve conseguir listar seus agendamentos em data específica;
+- Prestador deve conseguir receber notificação sempre que houver um novo agendamento;
 - Mensagens não lidas ficam destacadas;
 
 **RNF**
@@ -53,10 +53,10 @@
 
 **RF**
 
-- Usuário pode listar todos prestadores de serviço cadastrados;
-- Usuário pode listar os dias disponíveis do prestador selecionado;
-- Usuário pode listar os horários disponíveis do dia selecionado do prestador;
-- Usuário pode realizar novo agendamento com um prestador;
+- Usuário deve conseguir listar todos prestadores de serviço cadastrados;
+- Usuário deve conseguir listar os dias disponíveis do prestador selecionado;
+- Usuário deve conseguir listar os horários disponíveis do dia selecionado do prestador;
+- Usuário deve conseguir realizar novo agendamento com um prestador;
 
 **RNF**
 
