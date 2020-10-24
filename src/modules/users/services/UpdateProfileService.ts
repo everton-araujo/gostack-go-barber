@@ -11,11 +11,11 @@ interface IRequest {
     name: string;
     email: string;
     old_password?: string;
-    new_password?: string;
+    password?: string;
 }
 
 @injectable()
-class UpdateProfile {
+class UpdateProfileService {
     constructor(
         @inject('UsersRepository')
         private usersRepository: IUserRepository,
@@ -24,7 +24,7 @@ class UpdateProfile {
         private hashProvider: IHashProvider,
     ) { }
 
-    public async execute({ user_id, name, email, new_password, old_password }: IRequest): Promise<User> {
+    public async execute({ user_id, name, email, password, old_password }: IRequest): Promise<User> {
         const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
@@ -40,25 +40,25 @@ class UpdateProfile {
         user.name = name;
         user.email = email;
 
-        if (new_password && !old_password) {
+        if (password && !old_password) {
             throw new AppError('Must inform the old password to be able to change the password');
         }
 
-        if (new_password && old_password) {
+        if (password && old_password) {
             const checkOldPassword = await this.hashProvider.compareHash(
                 old_password,
                 user.password,
             );
 
             if (!checkOldPassword) {
-                throw new AppError('Old password does not match');
+                throw new AppError('Invalid old password, should match the old password');
             }
 
-            user.password = await this.hashProvider.generateHash(new_password);
+            user.password = await this.hashProvider.generateHash(password);
         }
 
         return this.usersRepository.save(user);
     }
 }
 
-export default UpdateProfile;
+export default UpdateProfileService;

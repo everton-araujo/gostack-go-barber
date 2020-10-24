@@ -32,6 +32,16 @@ describe('UpdateProfile', () => {
         expect(updatedUser.email).toBe('zezinho@email.com');
     });
 
+    it("shouldn't be able to update the profile from a non-existing user", async () => {
+        const profile = updateProfile.execute({
+            user_id: 'non-existing-user-id',
+            name: 'Test',
+            email: 'test@email.com'
+        });
+
+        await expect(profile).rejects.toBeInstanceOf(AppError);
+    });
+
     it("shouldn't be able to update using an email already in use by another profile", async () => {
         await fakeUsersRepository.create({
             name: 'Ze',
@@ -44,14 +54,6 @@ describe('UpdateProfile', () => {
             email: 'teste@email.com',
             password: '123123',
         });
-
-        // await expect(
-        //     updateProfile.execute({
-        //         user_id: user.id,
-        //         name: 'Ze',
-        //         email: 'ze@email.com',
-        //     }),
-        // ).rejects.toBeInstanceOf(AppError);
 
         const response = updateProfile.execute({
             user_id: user.id,
@@ -74,7 +76,7 @@ describe('UpdateProfile', () => {
             name: 'Zezinho',
             email: 'zezinho@email.com',
             old_password: '123456',
-            new_password: '123123',
+            password: '123123',
         });
 
         expect(updatedUser.password).toBe('123123');
@@ -91,7 +93,7 @@ describe('UpdateProfile', () => {
             user_id: user.id,
             name: 'Zezinho',
             email: 'zezinho@email.com',
-            new_password: '123123',
+            password: '123123',
         });
 
         await expect(response).rejects.toBeInstanceOf(AppError);
@@ -109,7 +111,7 @@ describe('UpdateProfile', () => {
             name: 'Zezinho',
             email: 'zezinho@email.com',
             old_password: 'wrong-old-password',
-            new_password: '123123',
+            password: '123123',
         });
 
         await expect(response).rejects.toBeInstanceOf(AppError);
