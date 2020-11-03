@@ -4,67 +4,67 @@
 
 **RF**
 
-- Usuário deve conseguir recuperar sua senha informando seu e-mail;
-- Usuário deve receber e-mail com as instruções de recuperação de senha;
-- Usuário deve conseguir redefinir sua senha;
+- [✔]Usuário deve conseguir recuperar sua senha informando seu e-mail;
+- [✔]Usuário deve receber e-mail com as instruções de recuperação de senha;
+- [✔]Usuário deve conseguir redefinir sua senha;
 
 **RNF**
 
-- Utilizar Mailtrap para testar envios de e-mail em ambiente de desenvolvimento;
-- Utilizar Amazon SES para envios de e-mail em ambiente de produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+- [✔]Utilizar Mailtrap para testar envios de e-mail em ambiente de desenvolvimento;
+- [✔]Utilizar Amazon SES para envios de e-mail em ambiente de produção;
+- [✔]O envio de e-mails deve acontecer em segundo plano (background job);
 
 **RN**
 
-- Link enviado por e-mail para redefinição de senha deve expirar em 2 horas;
-- Usuário precisa confirmar nova senha na redefinição;
+- [✔]Link enviado por e-mail para redefinição de senha deve expirar em 2 horas;
+- [✔]Usuário precisa confirmar nova senha na redefinição;
 
 ## Atualização do perfil
 
 **RF**
 
-- Usuário deve conseguir atualizar nome, e-mail e senha;
+- [✔]Usuário deve conseguir atualizar nome, e-mail e senha;
 
 **RN**
 
-- Usuário não pode alterar seu e-mail para um já existente no banco;
-- Para atualizar senha, usuário deve informar senha antiga;
-- Para atualizar senha, usuário precisa confirmar nova senha;
+- [✔]Usuário não pode alterar seu e-mail para um já existente no banco;
+- [✔]Para atualizar senha, usuário deve informar senha antiga;
+- [✔]Para atualizar senha, usuário precisa confirmar nova senha;
 
 ## Painel do prestador 
 
 **RF**
 
-- Prestador deve conseguir listar seus agendamentos em data específica;
-- Prestador deve conseguir receber notificação sempre que houver um novo agendamento;
-- Mensagens não lidas ficam destacadas;
+- [✔]Prestador deve conseguir listar seus agendamentos em data específica;
+- [✔]Prestador deve conseguir receber notificação sempre que houver um novo agendamento;
+- [✔]Mensagens não lidas ficam destacadas;
 
 **RNF**
 
-- Agendamentos do prestador no dia devem ser armazenadas em cache;
-- Notificações do prestador ficaram armazenadas no MongoDB;
-- Notificações do prestador serão enviadas em tempo real utilizando Socket.io;
+- [✔]Agendamentos do prestador no dia devem ser armazenadas em cache;
+- [✔]Notificações do prestador ficaram armazenadas no MongoDB;
+- [✔]Notificações do prestador serão enviadas em tempo real utilizando Socket.io;
 
 **RN**
 
-- Notificação deve ter um status de lida ou não lida para que o prestador consiga fazer o controle;
+- [✔]Notificação deve ter um status de lida ou não lida para que o prestador consiga fazer o controle;
 
 ## Agendamento de serviços 
 
 **RF**
 
-- Usuário deve conseguir listar todos prestadores de serviço cadastrados;
-- Usuário deve conseguir listar os dias disponíveis do prestador selecionado;
-- Usuário deve conseguir listar os horários disponíveis do dia selecionado do prestador;
-- Usuário deve conseguir realizar novo agendamento com um prestador;
+- [✔]Usuário deve conseguir listar todos prestadores de serviço cadastrados;
+- [✔]Usuário deve conseguir listar os dias disponíveis do prestador selecionado;
+- [✔]Usuário deve conseguir listar os horários disponíveis do dia selecionado do prestador;
+- [✔]Usuário deve conseguir realizar novo agendamento com um prestador;
 
 **RNF**
 
-- Listagem de prestadores deve ser armazenada em cache;
+- [✔]Listagem de prestadores deve ser armazenada em cache;
 
 **RN**
 
-- Cada agendamento deve durar 1 hora;
-- Os agendamentos devem estar disponíveis entre 8h às 18h  (primeiro às 8h, último às 17h);
-- Usuário não pode agendar em horário já ocupado;
-- Usuário não pode agendar em horário do passado;
+- [✔]Cada agendamento deve durar 1 hora;
+- [✔]Os agendamentos devem estar disponíveis entre 8h às 18h  (primeiro às 8h, último às 17h);
+- [✔]Usuário não pode agendar em horário já ocupado;
+- [✔]Usuário não pode agendar em horário do passado;
